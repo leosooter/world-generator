@@ -13,20 +13,19 @@ class Grid extends React.Component {
         super(props);
 
         this.state = {
-            zoomLevel: "small",
-            grid: this.generateGrid("small")
+            zoomLevel: "small"
         }
     }
 
     generateGrid = (zoomLevel) => {
         const {gridArray} = this.props;
-        console.log('gridArray', gridArray);
+        // console.log('gridArray', gridArray);
 
         const numRows = Math.ceil(Math.sqrt(gridArray.length));
         const squaresPerRow = Math.ceil(gridArray.length / numRows);
 
-        console.log('numRows', numRows);
-        console.log('squaresPerRow', squaresPerRow);
+        // console.log('numRows', numRows);
+        // /console.log('squaresPerRow', squaresPerRow);
 
 
         let gridRows = [];
@@ -35,7 +34,7 @@ class Grid extends React.Component {
         for (let rowCount = 0; rowCount < numRows; rowCount++) {
             let row = [];
             for (let squareCount = 0; squareCount < squaresPerRow; squareCount++) {
-                console.log('gridIndex', gridIndex, gridArray[gridIndex]);
+                // console.log('gridIndex', gridIndex, gridArray[gridIndex]);
                 if (gridArray[gridIndex]) {
                     row.push(<Square elevation={gridArray[gridIndex].elevation} size={zoomMapper[zoomLevel]}/>);
                 }
@@ -45,14 +44,14 @@ class Grid extends React.Component {
             gridRows.push(<div className="gridRow">{row}</div>);
         }
 
-        console.log('gridRows', gridRows);
+        // console.log('gridRows', gridRows);
 
         return gridRows;
 
     }
 
     render() {
-        return this.state.grid;
+        return this.generateGrid("small");
     }
 }
 

@@ -14,8 +14,12 @@ class Game extends React.Component {
     console.log('constructor');
 
     this.state = {
-      grid: getInitialGrid(5, 5)
+      grid: getInitialGrid(20, 20)
     }
+  }
+
+  updateGrid = (grid) => {
+    this.setState({grid});
   }
 
   render() {
@@ -23,7 +27,7 @@ class Game extends React.Component {
 
     return (
       <div className = "game-wrapper">
-        <Controls />
+        <Controls grid={this.state.grid} updateGrid={this.updateGrid}/>
         <Grid gridArray={this.state.grid}/>
       </div>
     );

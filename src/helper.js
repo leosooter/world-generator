@@ -52,3 +52,22 @@ function newSquare(index) {
         se: null
     }
 }
+
+export const rainFrom = (start, length = 1, direction, grid) => {
+    console.log('rainFrom', start, length, direction);
+
+    const startLine = [];
+    let current = start;
+    while (length > 0) {
+        console.log('loop', length);
+
+        length --;
+        current.elevation -= 50;
+        if(current[direction]) {
+            current = current[direction];
+        }
+    }
+
+    return grid;
+
+}

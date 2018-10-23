@@ -37,8 +37,10 @@
     "path": "^0.12.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.0",
+    "url-parse": "^1.4.3",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   },
